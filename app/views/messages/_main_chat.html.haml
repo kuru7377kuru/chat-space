@@ -1,0 +1,36 @@
+.chat_main
+  .chat_main__group_info
+    .chat_main__group_info__left_box
+      %h2.group kari_group
+      .chat_main__group_info__left_box__member_list
+        %ul.members Member : 
+        %li member1
+    .chat_main__group_info__edit_btn
+      = link_to "Edit" , "#" ,class: "edit_btn" 
+
+  .chat_main__message_list
+    .chat_main__message_list__messages
+      .chat_main__message_list__messages__upper_info
+        %p.talker user_name
+        %p.date 2020/04/08(Wed) 09:30:05
+      %p.text kari_text    
+
+    .chat_main__message_list__messages
+      .chat_main__message_list__messages__upper_info
+        %p.talker user_name２
+        %p.date 2020/04/08(Wed) 12:12:12
+      %p.text kari_text2    
+  .chat_main__send_form
+    .chat_main__send_form__left_box
+      .chat_main__send_form__left_box__input
+        
+        .chat_main__send_form__left_box__input__text
+          %label
+            %input.text_btn{type: "text" ,placeholder: "type a message"}
+        .chat_main__send_form__left_box__input__icon
+          %label
+            = icon('fas', 'image')
+            %input.file_btn{type: "file"}     
+
+    .chat_main__send_form__send_btn
+      = link_to "Send" , "#" ,class: "send_btn" 
