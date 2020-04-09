@@ -2,18 +2,24 @@
   .side_bar__user_name
     .side_bar__user_name--profile
       .side_bar__user_name--profile--name
-        kari
+        %h3.header__name
+          = current_user.name
       .side_bar__user_name--profile--icon
-      = link_to "#", class: "contents__btn" do
+      = link_to new_group_path, class: "contents__btn" do
         = icon('far fa-edit', class: "contents__btn--icon")
-      = link_to "#", class: "contents__btn " do
+      = link_to edit_user_path(current_user), class: "contents__btn " do
         = icon('fa fa-cog', class: "contents__btn--icon")
   .side_bar__group_list
     .side_bar__group_list__groups
+      - current_user.groups.each do |group|
+        %div.group
+          = link_to "#", class: "group_name" do
+            .group_name
+            = group.name
+          = link_to "#", class: "group_message" do
+            .group_message
+            = "メッセージはまだありません。"
       %div.group
         %a.group_name kari_group
         %a.group_message kari_message
- 
-
     
-  

@@ -1,7 +1,10 @@
 @import "reset";
+@import "config/colors";
 @import "modules/messages";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/user";
+@import "modules/group";
 
 .side_bar {
   float: left;
@@ -64,15 +67,21 @@
       .group {
         display: flex;
         flex-direction: column;
+        margin: 20px 20px 40px 20px;
 
         .group_name {
-          margin: 20px 20px 5px 20px;
           font-size: 15px;
+          display: inline-block;
+          text-decoration: none;
+          margin-bottom: 5px;
+          color: #fff;
         }
 
         .group_message {
-          margin: 0px 20px 40px 20px;
           font-size: 11px;
+          display: inline-block;
+          text-decoration: none;
+          color: #fff;
         }
       }
     }
