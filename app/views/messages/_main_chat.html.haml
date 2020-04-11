@@ -21,7 +21,7 @@
       %p.text kari_text2    
   .chat_main__send_form
     .form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: { class: "zzz" }  do |f|
         = f.text_field :content, class: "text", placeholder: 'type a message'
         .form__mask
           = f.label :image do
