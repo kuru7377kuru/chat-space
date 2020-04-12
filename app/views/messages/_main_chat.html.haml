@@ -5,20 +5,17 @@
         = @group.name
 
       .chat_main__group_info__left_box__member_list
-        %ul.members Member : 
-        %li member1
+        Member :&nbsp
+        - @group.users.each do |user|
+          .members
+            = user.name
     .chat_main__group_info__edit_btn
-      = link_to "Edit" , "#" ,class: "edit_btn" 
+      = link_to "Edit" , edit_group_path(current_user) ,class: "edit_btn" 
 
   .chat_main__message_list
     .messages
       = render @messages
 
-    .chat_main__message_list__messages
-      .chat_main__message_list__messages__upper_info
-        %p.talker user_name２
-        %p.date 2020/04/08(Wed) 12:12:12
-      %p.text kari_text2    
   .chat_main__send_form
     .form
       = form_for [@group, @message], html: { class: "zzz" }  do |f|
@@ -28,3 +25,4 @@
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: "send"
+
