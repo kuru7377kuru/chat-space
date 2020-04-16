@@ -10,7 +10,7 @@
           .members
             = user.name
     .chat_main__group_info__edit_btn
-      = link_to "Edit" , edit_group_path(current_user) ,class: "edit_btn" 
+      = link_to "Edit" , edit_group_path(@group) ,class: "edit_btn" 
 
   .chat_main__message_list
     .messages
