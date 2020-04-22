@@ -7,8 +7,9 @@
       .chat_main__group_info__left_box__member_list
         Member :&nbsp
         - @group.users.each do |user|
-          .members
-            = user.name
+          .members 
+            = user.name  
+            &nbsp
     .chat_main__group_info__edit_btn
       = link_to "Edit" , edit_group_path(@group.id) ,class: "edit_btn" 
 
